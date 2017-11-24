@@ -1,0 +1,35 @@
+<!--
+  Generated template for the HomeHm page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>homeHm</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card (tap)="tapEvent($evnet)">
+    <!--这是通过数据绑定的方式-->
+    <ion-item> 点击: {{tap}} 次</ion-item>
+  </ion-card>
+
+  <ion-card (press)="pressEvent($event)">
+    <!--这是通过数据绑定的方式-->
+    <ion-item> 按下：{{press}}次</ion-item>
+  </ion-card>
+
+  <ion-card (pan)="panEvent($event)">
+    <!--这是通过数据绑定的方式-->
+    <ion-item>手指滑动：{{pan}}次</ion-item>
+  </ion-card>
+  <ion-card (swipe)="swipeEvent($evnet)">
+    <!--这是通过数据绑定的方式-->
+    <ion-item>手指迅速滑动：{{swipe}}次</ion-item>
+  </ion-card>
+</ion-content>

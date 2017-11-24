@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ionic App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>-->
+  <style>
+    /*起始页面*/
+
+    .m_img-full-width {
+      max-width: 100%;
+      display: block;
+      position: relative;
+      margin: 10px auto;
+      margin-top: 2rem;
+    }
+
+    .start_box {
+      width: 100%;
+      height: 100%;
+    }
+
+    .start_box>header {
+      height: 30px;
+      margin-top: 10px;
+    }
+
+    .start_box>header>span {
+      color: red;
+      float: left;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 5px;
+      margin-top: 20px;
+    }
+
+    .start_box>header>button {
+      float: right;
+      margin: 5px;
+    }
+
+    .advertise {
+      width: 90%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .advertise>h1 {
+      width: 200px;
+      height: 200px;
+      border-radius: 100px;
+      background-color: #F46C84;
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .advertise>h1>b {
+      display: block;
+      width: 180px;
+      height: 180px;
+      border-radius: 90px;
+      background: #fff;
+      position: absolute;
+      left: 9px;
+      top: 9px;
+      text-align: center;
+      line-height: 180px;
+      z-index: 20;
+    }
+
+    .advertise>h1>div {
+      width: 20px;
+      height: 110px;
+      position: absolute;
+      left: 90px;
+      top: -10px;
+      z-index: 10;
+      background-color: #fff;
+      opacity: 0.7;
+      transform-origin: 50% 100%;
+
+      animation: greenRotate 2s infinite;
+      -moz-animation: greenRotate 2s infinite;
+      -webkit-animation: greenRotate 2s infinite;
+      -o-animation: greenRotate 2s infinite;
+    }
+
+    @keyframes greenRotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @-moz-keyframes greenRotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes greenRotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @-o-keyframes greenRotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .advertise>h2 {
+      position: relative;
+      top: -30px;
+      left: 60%;
+      width: 160px;
+      height: 160px;
+      border-radius: 80px;
+      background-color: #9ACAFE;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .advertise>h2>span {
+      display: block;
+      width: 140px;
+      height: 140px;
+      border-radius: 70px;
+      background-color: #fff;
+      position: relative;
+      margin: 10px auto;
+      z-index: 20;
+      text-align: center;
+      line-height: 140px;
+    }
+
+    .advertise>h2>div {
+      width: 20px;
+      height: 90px;
+      position: absolute;
+      left: 70px;
+      top: -10px;
+      background: #fff;
+      z-index: 10;
+      opacity: 0.7;
+      transform-origin: 10px 90px;
+      animation: greenRotate 2s 0.8s infinite;
+    }
+
+    .advertise>h3 {
+      position: relative;
+      top: -80px;
+      left: 0;
+      width: 140px;
+      height: 140px;
+      border-radius: 70px;
+      background-color: #FADA62;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .advertise>h3>i {
+      display: block;
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      background-color: #fff;
+      position: relative;
+      margin: 10px auto;
+      z-index: 20;
+      text-align: center;
+      line-height: 120px;
+    }
+
+    .advertise>h3>div {
+      width: 20px;
+      height: 80px;
+      position: absolute;
+      left: 60px;
+      top: -10px;
+      background: #fff;
+      z-index: 10;
+      opacity: 0.7;
+      transform-origin: 10px 80px;
+      animation: greenRotate 2s 1.6s infinite;
+    }
+  </style>
+  <link href="build/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <div class="start_box" ng-click="jump('main')">
+    <header>
+      <span id="span1">15</span>
+      <button class="button button-stable" ng-click="jump('main')">跳过</button>
+    </header>
+    <img class="m_img-full-width" src="images/logo.png" alt="" />
+    <section class="advertise">
+      <h1>
+        <div></div><b>页面</b></h1>
+      <h2>
+        <div></div><span>功能</span></h2>
+      <h3>
+        <div></div><i>APP</i></h3>
+    </section>
+  </div>
+  <ion-app></ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+  <script src="build/vendor.js"></script>
+  <!-- The bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+  <!--<script src="../qiniu-js/dist/qiniu.js'"></script>
+  <script src="plupload/js/plupload.full.min.js'"></script>-->
+  <!--<script type="text/javascript" src="assets/bower_components/qiniu-js/dist/qiniu.js'"></script>
+  <script type="text/javascript" src="assets/bower_components/plupload/js/plupload.full.min.js'"></script>-->
+
+  <script>
+      var numspan=document.getElementById('span1');
+      console.log(numspan)
+      // numspan.innerHTML=15
+      // number = 5;
+      setInterval(function () {
+        if (numspan.innerHTML > 0) {
+          numspan.innerHTML--;
+        }
+      }, 5000)
+    
+  </script>
+
+</body>
+
+</html>

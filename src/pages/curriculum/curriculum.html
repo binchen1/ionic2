@@ -1,0 +1,86 @@
+<!--
+  Generated template for the CurriculumPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>课程表</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--<ion-item>
+    <ion-label color="primary" stacked>Stacked Label</ion-label>
+    <ion-input type="email" placeholder="Email Input"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>Stacked Label</ion-label>
+    <ion-input type="week" placeholder="Email Input"></ion-input>
+  </ion-item>-->
+  <ion-item>
+    <ion-label color="primary" stacked>Stacked Label</ion-label>
+    <ion-input type="month" placeholder="month Input" [(ngModel)]="monthData"
+    (blur)="blurMonth()" (keyup)="onKeyMonth($event)"></ion-input>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col>星期日</ion-col>
+      <ion-col>星期一</ion-col>
+      <ion-col>星期二</ion-col>
+      <ion-col>星期三</ion-col>
+      <ion-col>星期四</ion-col>
+      <ion-col>星期五</ion-col>
+      <ion-col>星期六</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row *ngFor="let arrli of arr ;let i=index">
+      <ion-col style="height: 50px;" *ngFor="let li of arrli ;let i=index" >{{li}}
+      </ion-col>
+    </ion-row>
+    <!--<ion-row>
+      <ion-col>5</ion-col>
+      <ion-col>6</ion-col>
+      <ion-col>7</ion-col>
+      <ion-col>8</ion-col>
+      <ion-col>9</ion-col>
+      <ion-col>10</ion-col>
+      <ion-col>11</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>12</ion-col>
+      <ion-col>13</ion-col>
+      <ion-col>14</ion-col>
+      <ion-col>15</ion-col>
+      <ion-col>16</ion-col>
+      <ion-col>17</ion-col>
+      <ion-col>18</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>19</ion-col>
+      <ion-col>20</ion-col>
+      <ion-col>21</ion-col>
+      <ion-col>22</ion-col>
+      <ion-col>23</ion-col>
+      <ion-col>24</ion-col>
+      <ion-col>25</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>26</ion-col>
+      <ion-col>27</ion-col>
+      <ion-col>28</ion-col>
+      <ion-col>29</ion-col>
+      <ion-col>30</ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>-->
+
+  </ion-grid>
+
+</ion-content>

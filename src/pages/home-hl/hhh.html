@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id='canvas' width=200 height=200></canvas>
+<script>
+  var canvas=document.querySelector('canvas'),
+    context=canvas.getContext('2d'),
+    r=20;
+  context.strokeStyle='rgba(255,0,0,1)';
+  change(context,r);
+
+  function change(context,r){
+    context.clearRect(0,0,200,200);
+    context.beginPath();
+    context.arc(100,100,r++,0,2*Math.PI);
+    context.closePath();
+    context.stroke();
+    if(r>=100){
+      r=20;
+    }
+    window.requestAnimationFrame(function(){
+      change(context,r++)
+    });
+  }
+</script>
+</body>
+</html>

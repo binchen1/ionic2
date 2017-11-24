@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p (click)="nextProduct()"> {{productName}}</p>
+  <p (click)="nextNumber()"> {{productNumber}}</p>
+  <button ion-button [navPush]="nxPage" [navParams]="param">
+    点击直接带参数调转contact
+  </button>
+
+  <ion-row>
+    <ion-col>
+      <mycomponet data="AboutPage" (parentClick)="onClick($event)"></mycomponet>
+
+    </ion-col>
+  </ion-row>
+  <br><br>
+  <ion-item>
+    <ion-row>
+      <ion-col col-4><span>服务方性质</span></ion-col>
+      <ion-col col-8>
+        <a href="javascript:;" class="upload">
+          <img src="assets/images/qrcode.png" alt="">
+          <input class="change" type="file" (change)="changeListener($event)" multiple />
+        </a>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item>
+    <ion-row>
+      <ion-col col-4><span>服务方性质</span></ion-col>
+      <ion-col col-8>
+        <div  class="radioclass">
+          <span [style.color]="ptbuttonList1 ? '#108EE9':'#a6a6a6'"> <b [style.background-image]="ptbuttonList1 ? 'url(../assets/images/on.png)':''"></b>公益</span>
+          <label>
+            <input type="radio" name="radiobutton" value="公益" [(ngModel)]="nature" (change)="changeNature($event)"> 公益
+            </label>
+        </div>
+        <div  class="radioclass rightClass">
+          <span [style.color]="ptbuttonList2 ? '#108EE9':'#a6a6a6'">  <b [style.background-image]="ptbuttonList2 ? 'url(../assets/images/on.png)':''"></b>普通</span>
+          <label>
+            <input type="radio" name="radiobutton" value="普通" [(ngModel)]="nature" (change)="changeNature($event)"> 普通
+          </label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-row>
+    {{nature}}
+  </ion-row>
+  <ion-row (click)="qitaFwq()">
+    点击获取数据
+  </ion-row>
+
+  
+
+  <!--<div style="background-color: #fff">
+    <div class="radioclass">
+      <ion-list style="float: left">
+        <ion-item style="padding: 0">
+          <ion-row class="backgroundImage"  >
+            <ion-col col-12><span>服务方性质</span></ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-list>
+      <ion-list style="width:65%;float: left" radio-group [(ngModel)]="nature">
+        <ion-row class="labelSpan" style="padding: 0">
+          <ion-col>
+            <ion-item>
+              <ion-label class="labelRadio" >公益</ion-label>
+              <ion-radio value="公益"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label class="labelRadio" >普通</ion-label>
+              <ion-radio value="普通"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </div>
+  </div>-->
+  <br>
+  <br>
+  <br>
+</ion-content>

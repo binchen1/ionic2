@@ -1,0 +1,7 @@
+{
+  "data": [
+    {"id":1,"name":"人事部","details":"建立、执行招聘、培训、考勤、劳动纪律等","img":"assets/index/xietong03.png"},
+    {"id":2,"name":"核心研发部","details":"肩负着研制、开发新产品及完善产品功能","img":"assets/index/xietong02.png"},
+    {"id":2,"name":"核心研发部","details":"投资项目的具体实施运作及其经营管理","img":"assets/index/xietong04.png"}
+  ]
+}

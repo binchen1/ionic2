@@ -1,0 +1,60 @@
+page-about {
+     .upload{
+        // padding: 4px 10px;
+        height: 60px;
+        width: 60px;
+        display: block;
+        position: relative;
+        // border: 1px solid #999;
+        text-decoration: none;
+        color: #666;
+    }
+    .upload img{
+      display: block;
+      width:100%;
+      height: 100%;
+    }
+    .change{
+        display: block;
+        width:100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+        right: 0;
+        top: 0;
+        opacity: 0;
+    }
+    .radioclass{
+        width: 60px;
+        height: 40px;
+        // background-color: red;
+        position: relative;
+        display: inline-block;
+    }
+    .radioclass label{
+        // float: left;
+         width: 100%;
+         height: 100%;
+         display: inline-block;
+         position: absolute;
+         left: 0;
+         opacity: 0;
+    }
+    .radioclass span{
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+    }
+    .radioclass span b{
+        display: inline-block;
+        margin-right: 5px;
+        width: 14px;
+        height: 14px;
+        background: url(../assets/images/off.png) no-repeat center center;
+        background-size: contain;
+    }
+    .rightClass{
+        // background-color: cadetblue;
+       
+    }
+}

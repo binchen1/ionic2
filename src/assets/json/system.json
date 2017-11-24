@@ -1,0 +1,28 @@
+{
+  "data": [
+    {"id": 10, "name": "组织","img":"assets/index/xietong02.png", "children":[
+        {"id": 101, "name": "社会组织","img":"assets/index/xietong01.png"},
+        {"id": 102, "name": "互益组织","img":"assets/index/xietong04.png"},
+        {"id": 103, "name": "工商组织","img":"assets/index/xietong03.png"}
+      ]
+    },
+    {"id": 20, "name": "功能","img":"assets/index/xietong01.png", "children":[
+      {"id": 201, "name": "工商组织","img":"assets/index/xietong03.png"},
+      {"id": 202, "name": "信息管理","img":"assets/index/xietong02.png"},
+      {"id": 203, "name": "部门管理","img":"assets/index/xietong04.png", "children":[
+        {"id": 2031, "name": "人事部","img":"assets/index/xietong01.png"},
+        {"id": 2031, "name": "财务部","img":"assets/index/xietong03.png"},
+        {"id": 2031, "name": "研发部","img":"assets/index/xietong02.png"}
+      ]}
+    ]},
+    {"id": 30, "name": "类型","img":"assets/index/xietong03.png", "children":[
+      {"id": 301, "name": "私营企业","img":"assets/index/xietong04.png"},
+      {"id": 302, "name": "国有企业","img":"assets/index/xietong01.png", "children":[
+        {"id": 3021, "name": "工会","img":"assets/index/xietong03.png"},
+        {"id": 3021, "name": "事业单位","img":"assets/index/xietong04.png"},
+        {"id": 3021, "name": "医院","img":"assets/index/xietong03.png"},
+        {"id": 3021, "name": "学校","img":"assets/index/xietong01.png"}
+        ]},
+      {"id": 303, "name": "个体户","img":"assets/index/xietong05.png"}
+    ]}
+]}
