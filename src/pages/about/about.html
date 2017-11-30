@@ -31,23 +31,31 @@
       </ion-col>
     </ion-row>
   </ion-item>
+
   <ion-item>
     <ion-row>
-      <ion-col col-4><span>服务方性质</span></ion-col>
+      <ion-col col-4 style="white-space:initial;">服务方性质</ion-col>
       <ion-col col-8>
-        <div  class="radioclass">
-          <span [style.color]="ptbuttonList1 ? '#108EE9':'#a6a6a6'"> <b [style.background-image]="ptbuttonList1 ? 'url(../assets/images/on.png)':''"></b>公益</span>
-          <label>
+        <ion-row>
+          <ion-col class="radioclass">
+            <span [style.color]="ptbuttonList1 ? '#108EE9':'#a6a6a6'"> 
+            <b [style.background-image]="ptbuttonList1 ? 'url(assets/images/on.png)':'url(assets/images/off.png)'"></b>
+            公益</span>
+            <label>
             <input type="radio" name="radiobutton" value="公益" [(ngModel)]="nature" (change)="changeNature($event)"> 公益
             </label>
-        </div>
-        <div  class="radioclass rightClass">
-          <span [style.color]="ptbuttonList2 ? '#108EE9':'#a6a6a6'">  <b [style.background-image]="ptbuttonList2 ? 'url(../assets/images/on.png)':''"></b>普通</span>
-          <label>
+          </ion-col>
+          <ion-col class="radioclass rightClass">
+            <span [style.color]="ptbuttonList2 ? '#108EE9':'#a6a6a6'">  
+            <b [style.background-image]="ptbuttonList2 ? 'url(assets/images/on.png)':'url(assets/images/off.png)'"></b
+            >普通</span>
+            <label>
             <input type="radio" name="radiobutton" value="普通" [(ngModel)]="nature" (change)="changeNature($event)"> 普通
           </label>
-        </div>
+          </ion-col>
+        </ion-row>
       </ion-col>
+
     </ion-row>
   </ion-item>
   <ion-row>
@@ -57,7 +65,7 @@
     点击获取数据
   </ion-row>
 
-  
+
 
   <!--<div style="background-color: #fff">
     <div class="radioclass">

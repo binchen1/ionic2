@@ -13,26 +13,23 @@
 
 <ion-content padding>
   <ion-list>
-    <div color="light" class="MudataClass">
-      <p (tap)="onMudata(0)"> 系统目录</p>
-      <div class="spanClass">
-        <div>
-          <span *ngFor="let Xd of muData;let i=index" (tap)="onMudata(Xd.id)"> &gt; {{Xd.name}}</span>
-        </div>
-      </div>
-    </div>
+    <ion-item-divider color="light">
+      <b (tap)="onMudata(0)"> 系统目录</b>
+      <span *ngFor="let Xd of muData;let i=index" (tap)="onMudata(Xd.id)"> &gt; {{Xd.name}}</span>
+    </ion-item-divider>
     <ion-item-group *ngFor="let Ch of ChData;let i=index">
-      <ion-item (tap)="onChdata(Ch.name,Ch.id)">
-        <ion-thumbnail item-left>
-          <img src="{{Ch.img}}">
-        </ion-thumbnail>
-        <p>{{Ch.name}}</p>
-        <h2 (swipeRight)="swipeEL()">向右滑动</h2>
-      </ion-item>
+    <ion-item (tap)="onChdata(Ch.name,Ch.id)">
+      <ion-thumbnail item-left>
+        <img src="{{Ch.img}}">
+      </ion-thumbnail>
+      <p>{{Ch.name}}</p>
+      <h2 (swipeRight)="swipeEL()">向右滑动</h2>
+    </ion-item>
     </ion-item-group>
     <ion-item-group>
       <ion-item class="system_box" [ngStyle]="currentClasses">
-        <ion-row (swipeRight)="swipeRR()" (swipeLeft)="swipeRL()">
+        <ion-row (swipeRight)="swipeRR()"
+                 (swipeLeft)="swipeRL()" >
           <ion-col col-2>
             <button ion-button full color="secondary">图片</button>
           </ion-col>
