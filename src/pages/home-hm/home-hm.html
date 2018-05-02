@@ -7,29 +7,35 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>homeHm</ion-title>
+    <ion-title>电池</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-card (tap)="tapEvent($evnet)">
-    <!--这是通过数据绑定的方式-->
-    <ion-item> 点击: {{tap}} 次</ion-item>
-  </ion-card>
-
-  <ion-card (press)="pressEvent($event)">
-    <!--这是通过数据绑定的方式-->
-    <ion-item> 按下：{{press}}次</ion-item>
-  </ion-card>
-
-  <ion-card (pan)="panEvent($event)">
-    <!--这是通过数据绑定的方式-->
-    <ion-item>手指滑动：{{pan}}次</ion-item>
-  </ion-card>
-  <ion-card (swipe)="swipeEvent($evnet)">
-    <!--这是通过数据绑定的方式-->
-    <ion-item>手指迅速滑动：{{swipe}}次</ion-item>
-  </ion-card>
+  <div style="background-color: springgreen;width: 100px;height: 200px;margin: 0 auto;">
+    <svg width="100px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <!--<ellipse cx="50" cy="100" rx="40" ry="90" style="fill:yellow" />
+      <ellipse cx="50" cy="100" rx="20" ry="80" style="fill:white" />-->
+      <polygon points="10,40 10,180 90,180 90,40 60,40 60,20 40,20 40,40" style="fill:peachpuff;stroke:peachpuff;stroke-width:3;fill-rule:evenodd;"
+      />
+      <polygon points="20,50 20,170 80,170 80,50" style="fill:seagreen;stroke:peachpuff;stroke-width:3;fill-rule:evenodd;" />
+      <polygon points="20,130 45,135 40,170 80,130 55,125 60,80" style="fill:peachpuff;fill-rule:evenodd;" />
+    </svg>
+  </div>
+  <p style="text-align: center">剩余充电时间</p>
+  <p style="text-align: center">01：22：30</p>
+  <div>
+    <div class="cr">
+      <div class="cr1"></div>
+      <div class="cr2"></div>
+      <div class="cr3"></div>
+      <div class="cr3"></div>
+    </div>
+    <div class="crModule"></div>
+  </div>
+  <div #content class="parent">
+    <canvas #theCanvas class="canvas"></canvas>
+  </div>
 </ion-content>

@@ -1,0 +1,3 @@
+[submodule "shared/sdk"]
+	path = shared/sdk
+	url = git://git.liluntech.com/estate/v3/sdk.js.git

@@ -15,7 +15,6 @@ export class HomeCanvasPage {
   private canvasInnerWidth:number = 0;
   private canvasInnerHeight:number = 0;
   private getWidth:string = '100%';
-  //private getHeight:string = '150px';
 
   constructor(public navCtrl:NavController,
               public navParams:NavParams) {
@@ -34,13 +33,6 @@ export class HomeCanvasPage {
       this.ctx.arc(this.rn(0, x), this.rn(0, y), this.rn(0, 5), 0, Math.PI * 2, true);
       this.ctx.fillStyle = `rgba(${this.rc(0, 255)},${this.ra()})`;
       this.ctx.fill();
-      // var timer=setInterval(()=>{
-      //   x-=0.5
-      //   this.ctx.arc(this.rn(0, x), this.rn(0, y), this.rn(0, 5), 0, Math.PI * 2, true);
-      //   if(x==0){
-      //     clearInterval(timer)
-      //   }
-      // },5000)
     }
   }
   ra() {
@@ -59,22 +51,3 @@ export class HomeCanvasPage {
 
 }
 
-//private loadImage(): void {
-//
-//  let image = new Image();
-//  image.onload = () => {
-//let ratio: number = image.width / image.height;
-// create a canvas and a context for image resizing
-//let oc = document.createElement('canvas');
-//let octx = oc.getContext('2d');
-//oc.width = image.width;
-//  this.canvasWidth = this.content.nativeElement.offsetWidth;
-//this.canvasInnerHeight = oc.height;
-//this.theCanvas.nativeElement.height = this.canvasInnerHeight;
-//this.ctx.fillStyle='#FF0000';
-//this.ctx.fillRect(0,0,80,100);
-//this.ctx.moveTo(0,0);
-//this.ctx.lineTo(150,50);
-//this.ctx.lineTo(20,100);
-//this.ctx.strokeStyle = "blue";    //设定描边颜色为蓝色
-//this.ctx.stroke();

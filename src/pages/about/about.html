@@ -64,36 +64,32 @@
   <ion-row (click)="qitaFwq()">
     点击获取数据
   </ion-row>
+<ion-spinner name="bubbles">12</ion-spinner>
+<ion-spinner name="bubbles" class="spinner1">12</ion-spinner>
+<ion-spinner name="bubbles">12</ion-spinner>
+<ion-spinner name="bubbles">12</ion-spinner>
+<ion-spinner name="bubbles">12</ion-spinner>
+<ion-spinner name="bubbles">12</ion-spinner>
+<ion-spinner name="bubbles">12</ion-spinner>
+<ion-spinner name="bubbles">12</ion-spinner>
+<ion-list>
 
+  <ion-item>
+    <ion-label>Pepperoni</ion-label>
+    <ion-toggle [(ngModel)]="pepperoni"></ion-toggle>
+  </ion-item>
 
+  <ion-item>
+    <ion-label>Sausage</ion-label>
+    <ion-toggle [(ngModel)]="sausage" disabled="true"></ion-toggle>
+  </ion-item>
 
-  <!--<div style="background-color: #fff">
-    <div class="radioclass">
-      <ion-list style="float: left">
-        <ion-item style="padding: 0">
-          <ion-row class="backgroundImage"  >
-            <ion-col col-12><span>服务方性质</span></ion-col>
-          </ion-row>
-        </ion-item>
-      </ion-list>
-      <ion-list style="width:65%;float: left" radio-group [(ngModel)]="nature">
-        <ion-row class="labelSpan" style="padding: 0">
-          <ion-col>
-            <ion-item>
-              <ion-label class="labelRadio" >公益</ion-label>
-              <ion-radio value="公益"></ion-radio>
-            </ion-item>
-          </ion-col>
-          <ion-col>
-            <ion-item>
-              <ion-label class="labelRadio" >普通</ion-label>
-              <ion-radio value="普通"></ion-radio>
-            </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-list>
-    </div>
-  </div>-->
+  <ion-item>
+    <ion-label>Mushrooms</ion-label>
+    <ion-toggle [(ngModel)]="mushrooms"></ion-toggle>
+  </ion-item>
+
+</ion-list>
   <br>
   <br>
   <br>

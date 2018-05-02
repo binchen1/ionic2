@@ -6,7 +6,7 @@ import { NavController,NavParams } from 'ionic-angular';
   templateUrl: 'contact.html'
 })
 export class ContactPage {
-  pushPage:any=HomePage;
+  pushPage:any='HomePage';
   @ViewChild("theCanvas") theCanvas:ElementRef;
   @ViewChild("content") content:ElementRef;
   private ctx:CanvasRenderingContext2D;  // canvas context

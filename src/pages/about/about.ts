@@ -10,7 +10,7 @@ import { MycomponetComponent } from '../../components/mycomponet/mycomponet';
   templateUrl: 'about.html'
 })
 export class AboutPage {
-  nxPage: any = ContactPage;
+  nxPage: any = 'ContactPage';
 
   param: any = { dd: 42 };
   // detailMsg: string = "";

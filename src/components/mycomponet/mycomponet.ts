@@ -1,7 +1,7 @@
 import { Component,Input,Output, EventEmitter } from '@angular/core';
 
 // import { plupload } from 'plupload';
-// import { Qiniu } from 'qiniu/dist/plugin.js'; 
+// import * as qiniu  from 'qiniu.js/dist/plugin.js'; 
 // import 'qiniu-js/dist/plugin.js';
 // import 'plupload/js/plupload.full.min.js';
 
@@ -25,7 +25,7 @@ export class MycomponetComponent {
   constructor(  ) {
     console.log('Hello MycomponetComponent Component');
     this.data = 'Hello World';
-      // var uploader = Qiniu.uploader({
+      // var uploader = qiniu.uploader({
       //     runtimes: 'html5,flash,html4',      // 上传模式，依次退化
       //     browse_button: 'pickfiles',         // 上传选择的点选按钮，必需
       //     // 在初始化时，uptoken，uptoken_url，uptoken_func三个参数中必须有一个被设置
@@ -66,9 +66,9 @@ export class MycomponetComponent {
       //     //},
       //     init: {
       //         'FilesAdded': function(up, files) {
-      //             plupload.each(files, function(file) {
-      //                 // 文件添加进队列后，处理相关的事情
-      //             });
+      //             // plupload.each(files, function(file) {
+      //             //     // 文件添加进队列后，处理相关的事情
+      //             // });
       //         },
       //         'BeforeUpload': function(up, file) {
       //               // 每个文件上传前，处理相关的事情

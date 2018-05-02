@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,ViewController } from 'ionic-angular';
-import { HomeHmPage } from '../home-hm/home-hm';
+import { HomePage } from '../home/home';
 /*
   Generated class for the HomeHl page.
 
@@ -12,6 +12,8 @@ import { HomeHmPage } from '../home-hm/home-hm';
   templateUrl: 'home-hl.html'
 })
 export class HomeHlPage {
+  public username:string='';
+  public password:string='';
   public img:string='assets/images/2.jpg';
   imgArray:any=[{"id":1,"img":"assets/images/1.jpg"},
     {"id":2,"img":"assets/images/2.jpg"},
@@ -21,7 +23,7 @@ export class HomeHlPage {
               public viewCtrl: ViewController,
               public navParams: NavParams) {}
   goToOtherPage() {
-    console.log(this.navCtrl.push(HomeHmPage, {id: "hm"}));
+    console.log(this.navCtrl.push('HomePage', {id: "hm"}));
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomeHlPage');
@@ -33,14 +35,20 @@ export class HomeHlPage {
       if(n>=4){
         n=0;
       }
-      console.log(this.img)
+      // console.log(this.img)
     },2000);
     //if(this.viewCtrl.dismiss()){
     //  clearInterval(timer)
     //}
-
-
+    
   }
+  onsubmit(){
+      console.log('username',this.username)
+      console.log('password',this.password)
+      if(this.username==='zhanghong'&&this.password==='123456'){
+         this.navCtrl.push('HomePage' , {name:this.username})
+      }
+    }
 
 
 }

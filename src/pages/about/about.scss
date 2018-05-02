@@ -60,4 +60,23 @@ page-about {
     // .col{
     //     white-space:initial;
     // }
+    ion-spinner * {
+    width: 28px;
+    height: 28px;
+    stroke: #444;
+    fill: #222;
+    }
+    .spinner1{
+        background-color: red;
+    }
+    .spinner1 .spinner-bubbles svg{
+            position:relative;
+            background-color: chartreuse;
+    }
+  
 }
+  $toggle-ios-background-color-off:chartreuse;
+    $toggle-ios-border-color-off:chartreuse;
+   $toggle-ios-width:100px;
+
+

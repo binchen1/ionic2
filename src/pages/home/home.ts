@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NavController, IonicModule, Slides, Events, Platform } from 'ionic-angular';
+import { NavController, IonicModule, Slides, Events, Platform,NavParams } from 'ionic-angular';
 // import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomeHmPage } from '../home-hm/home-hm';
-import { HomeHlPage } from '../home-hl/home-hl';
-import { HomeCanvasPage } from '../home-canvas/home-canvas';
-import { SystemPage } from '../system/system';
+// import { ContactPage } from '../contact/contact';
+// import { HomeHmPage } from '../home-hm/home-hm';
+// import { HomeHlPage } from '../home-hl/home-hl';
+// import { HomeCanvasPage } from '../home-canvas/home-canvas';
+// import { SystemPage } from '../system/system';
 
 @Component({
   selector: 'page-home',
@@ -21,15 +21,12 @@ export class HomePage {
   };
   public msgToChild: string;
   public msgFromChild: string;
+  public names: string='登录';
   constructor(public navCtrl: NavController, public events: Events,
+  public navParams: NavParams,
     public plt: Platform
   ) {
     this.msgToChild = 'message from parent'
-
-    // console.log(this.plt.versions().android);
-    // if(this.plt.versions().android!=undefined){
-    //   alert('你已在android上登陆')
-    // }
     this.plt.ready().then((readySource) => {
       console.log('Platform ready from', readySource);
       console.log(this.plt.versions());
@@ -37,6 +34,12 @@ export class HomePage {
       console.log(currentPlatformVersion)
       // Platform now ready, execute any required native code
     });
+    var name=this.navParams.get('name');
+    if(name===undefined){
+      this.names='请登录';
+    }else{
+     this.names= this.navParams.get('name')+',你好';
+    }
 
   }
   //课程表
@@ -52,7 +55,7 @@ export class HomePage {
     this.events.publish('user:created', user);
   }
   goToRepirPage1() {
-    this.navCtrl.push(HomeHmPage, { id: "sam" });
+    this.navCtrl.push('HomeHmPage', { id: "sam" });
     console.log('被点了');
   }
   receive(msg: string) {
@@ -67,19 +70,19 @@ export class HomePage {
   }
 
   goToRepirPage2() {
-    this.navCtrl.push(HomeHlPage, { id: "2" });
+    this.navCtrl.push('HomeHlPage', { id: "2" });
     console.log('被点了')
   }
   slideChanged() {
     let currentIndex = this.slides.getActiveIndex();
-    console.log("Current index is", currentIndex);
+    // console.log("Current index is", currentIndex);
   }
   oncanvas() {
-    this.navCtrl.push(HomeCanvasPage, { id: "2" });
+    this.navCtrl.push('HomeCanvasPage', { id: "2" });
     console.log('跳到绘图')
   }
   onhttp() {
-    this.navCtrl.push(SystemPage, { id: "2" });
+    this.navCtrl.push('SystemPage', { id: "2" });
     console.log('跳到system')
   }
 

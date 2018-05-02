@@ -45,21 +45,6 @@ export class CurriculumPage {
     //42天
     var weekDaynum = this.getWeekDayNextMonth(Year, Month - 1);
     console.log('星期几', weekDaynum);
-    // this.getWeekDayNextMonth(Year,Month);//2017,10
-      //  for (var i = 0; i < result.length / 3; i++) {
-      //         $scope.teacherList[i] = [];
-      //         for (var j = 0; j < 3; j++) {
-      //           $scope.teacherList[i][j] = result[i * 3 + j];
-      //         }
-      //       }
-
-      // for(var i=0;i<42;i++){
-      //   if(i<weekDaynum||i>num){
-      //      this.list.push('')
-      //   }else{
-      //      this.list.push(i-weekDaynum)
-      //   }
-      // }
     for (var i = 0; i < weekDaynum; i++) {
       this.list.push(undefined)
     }

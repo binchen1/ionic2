@@ -1,3 +1,70 @@
 page-home-hm {
-
+.cr{
+  display: flex;
+  height: 50px;
+  background-color: springgreen;
 }
+.cr>div{
+  
+  border-radius: 50%;
+   background-color:#ff6;
+    width: 25%;
+    animation:scroll2 1s linear  infinite;
+}
+.cr1{
+  width: 40%;
+  // background-color:#ff6;
+  animation:scroll2 1s linear  infinite;
+}
+div.cr2{
+  width: 30%;
+  border-radius: 50%;
+  //  background-color:springgreen;
+   animation:scroll2 1s linear 2s infinite;
+}
+.cr3{
+  width: 30%;
+  //  background-color:#f06;
+    animation:scroll2 1s linear 4s infinite;
+}
+.crModule{
+  position: relative;
+  top: -25px;
+  left: 0;
+  height: 30px;
+  background-color: #ff6;
+}
+.canvas{
+  background-color:rosybrown;
+  border-radius: 20%;
+  
+}
+
+.parent{
+ background-color: chartreuse;
+ width: 100%;height: 100%;
+  position: relative;
+  transform:rotatex(-30deg) rotatey(0deg);
+  transform-style: preserve-3d;
+//   animation:scroll 15s linear infinite;
+}
+.parent:hover{
+  animation-play-state:paused;
+}
+/*声明动画*/
+@keyframes scroll2{
+0%   {transform:rotatey(0deg) rotatez(0deg);}
+25%  {transform:rotatey(0deg) rotatez(10deg);}
+50%  {transform:rotatey(0deg) rotatez(20deg);}
+100% { transform:rotatey(0deg) rotatez(0deg);}
+}
+@keyframes scroll{
+  from{
+    transform:rotatex(-30deg) rotatey(0deg);
+  }
+  to{
+    transform:rotatex(-30deg) rotatey(360deg);
+  }
+}
+}
+
