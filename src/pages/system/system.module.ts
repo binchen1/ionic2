@@ -11,4 +11,4 @@ import { SystemPage } from './system';
 
   ],
 })
-export class LoginPageModule {}
+export class SystemPageModule {}

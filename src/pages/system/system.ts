@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
-import { NavController,ViewController } from 'ionic-angular';
+import { NavController,ViewController,IonicPage } from 'ionic-angular';
 import { Http, Response }          from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
-
+@IonicPage()
 @Component({
   selector: 'page-system',
   templateUrl: 'system.html'

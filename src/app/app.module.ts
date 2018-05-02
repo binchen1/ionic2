@@ -3,8 +3,8 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { WelcomePage } from '../pages/welcome/welcome';
+// import { HomePage } from '../pages/home/home';
+// import { WelcomePage } from '../pages/welcome/welcome';
 
 import { UpdateImageProvider } from '../providers/update-image/update-image';
 import { LogserviceProvider } from '../providers/logservice/logservice';
@@ -19,8 +19,8 @@ import { DatetimeformatProvider } from '../providers/datetimeformat/datetimeform
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    WelcomePage,
+    // HomePage,
+    // WelcomePage,
   ],
   imports: [
     HttpModule,
@@ -39,8 +39,8 @@ import { DatetimeformatProvider } from '../providers/datetimeformat/datetimeform
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    WelcomePage,
+    // HomePage,
+    // WelcomePage,
 
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },

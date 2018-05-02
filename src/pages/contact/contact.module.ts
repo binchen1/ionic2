@@ -11,4 +11,4 @@ import { ContactPage } from './contact';
 
   ],
 })
-export class LoginPageModule {}
+export class ContactPageModule {}

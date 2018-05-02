@@ -1,6 +1,6 @@
 import { Component,ViewChild,ElementRef } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
+import { NavController, NavParams,IonicPage } from 'ionic-angular';
+@IonicPage()
 @Component({
   selector: 'page-home-canvas',
   templateUrl: 'home-canvas.html'

@@ -11,4 +11,4 @@ import { HomeCanvasPage } from './home-canvas';
 
   ],
 })
-export class LoginPageModule {}
+export class HomeCanvasPageModule {}

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
-import { NavController, NavParams, IonicModule } from 'ionic-angular';
+import { NavController, NavParams, IonicModule,IonicPage } from 'ionic-angular';
 import { ContactPage } from '../contact/contact';
 
 import { MycomponetComponent } from '../../components/mycomponet/mycomponet';
 
+@IonicPage()
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'

@@ -1,12 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NavController, IonicModule, Slides, Events, Platform,NavParams } from 'ionic-angular';
-// import { AboutPage } from '../about/about';
-// import { ContactPage } from '../contact/contact';
-// import { HomeHmPage } from '../home-hm/home-hm';
-// import { HomeHlPage } from '../home-hl/home-hl';
-// import { HomeCanvasPage } from '../home-canvas/home-canvas';
-// import { SystemPage } from '../system/system';
+import { NavController, IonicModule, Slides, Events, Platform,NavParams,IonicPage } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

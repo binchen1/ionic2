@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,ViewController } from 'ionic-angular';
+import { NavController, NavParams,ViewController,IonicPage } from 'ionic-angular';
 import { HomePage } from '../home/home';
 /*
   Generated class for the HomeHl page.
@@ -7,6 +7,8 @@ import { HomePage } from '../home/home';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+
+@IonicPage()
 @Component({
   selector: 'page-home-hl',
   templateUrl: 'home-hl.html'

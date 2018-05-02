@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef, Renderer } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { NavController, NavParams,IonicPage } from 'ionic-angular';
 import { LogserviceProvider } from '../../providers/logservice/logservice';
+// import { HomePage } from '../home/home';
 
 /*
   Generated class for the Welcome page.
@@ -9,6 +9,9 @@ import { LogserviceProvider } from '../../providers/logservice/logservice';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+
+
+@IonicPage()
 @Component({
   selector: 'page-welcome',
   templateUrl: 'welcome.html'
@@ -128,7 +131,7 @@ export class WelcomePage {
 
 
   goToHome() {
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot('HomePage');
     clearInterval(this.timer)
   }
   onReset() {

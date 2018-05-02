@@ -11,4 +11,4 @@ import { AboutPage } from './about';
 
   ],
 })
-export class LoginPageModule {}
+export class AboutPageModule {}

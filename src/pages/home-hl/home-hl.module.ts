@@ -11,4 +11,4 @@ import { HomeHlPage } from './home-hl';
 
   ],
 })
-export class LoginPageModule {}
+export class HomeHlPageModule {}

@@ -11,4 +11,4 @@ import { AboutAlPage } from './about-al';
 
   ],
 })
-export class LoginPageModule {}
+export class AboutAlPageModule {}

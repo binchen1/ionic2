@@ -15,14 +15,15 @@
 
 <!--<ion-content padding>
   <ion-slides pager>
-    <ion-slide>-->
+    <ion-slide>
       <div class="contentclass" #contentclass>
         <img #myimage src="{{imgpath}}" alt="photo">
         <canvas #mycanvas></canvas>
         <button ion-button color="secondary" class="leftbutton" (click)="onReset()">重置</button>
         <button ion-button color="danger" class="rightbutton" (click)="onstart()">启动</button>
+        <button light (click)="goToHome()" style="position: absolute;z-index: 300">立即启动</button>
       </div>
-    <!--</ion-slide>
+    </ion-slide>
     <ion-slide>
       <img src="assets/images/z06.jpg" />
     </ion-slide>
@@ -45,3 +46,11 @@
   <button light (click)="goToHome()">立即启动</button>
 
 </ion-content>-->
+
+  <div class="contentclass" #contentclass>
+        <img #myimage src="{{imgpath}}" alt="photo">
+        <canvas #mycanvas></canvas>
+        <button ion-button color="secondary" class="leftbutton" (click)="onReset()">重置</button>
+        <button ion-button color="danger" class="rightbutton" (click)="onstart()">启动</button>
+        <button light (click)="goToHome()" style="position: absolute;z-index: 300">立即启动</button>
+      </div>
