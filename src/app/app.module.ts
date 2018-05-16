@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule, JsonpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
 // import { HomePage } from '../pages/home/home';
 // import { WelcomePage } from '../pages/welcome/welcome';
@@ -23,8 +23,7 @@ import { DatetimeformatProvider } from '../providers/datetimeformat/datetimeform
     // WelcomePage,
   ],
   imports: [
-    HttpModule,
-    JsonpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp,{
       iconMode: 'ios',
       modalEnter: 'modal-slide-in',

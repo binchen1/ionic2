@@ -12,8 +12,8 @@ import { Component,Input,Output,EventEmitter } from '@angular/core';
 })
 export class HomeChildComponent {
 
-    @Input() public message:string;
-    @Output() public outer=new EventEmitter<string>()
+    @Input()  message:string;
+    @Output()  outer=new EventEmitter<string>()
 
   constructor() {
     console.log('Hello HomeChildComponent Component');

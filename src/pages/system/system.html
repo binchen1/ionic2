@@ -14,7 +14,7 @@
 <ion-content padding>
   <ion-list>
     <ion-item-divider color="light">
-      <b (tap)="onMudata(0)"> 系统目录</b>
+      <b (tap)="onMudata(0,$event)" #myMudata> 系统目录</b>
       <span *ngFor="let Xd of muData;let i=index" (tap)="onMudata(Xd.id)"> &gt; {{Xd.name}}</span>
     </ion-item-divider>
     <ion-item-group *ngFor="let Ch of ChData;let i=index">

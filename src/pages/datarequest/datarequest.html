@@ -14,8 +14,10 @@
 
 
 <ion-content padding>
-  <ion-row>
-    <ion-col *ngFor="let li of XtList;">{{li.name}}</ion-col>
+  <ion-row *ngFor="let li of XtList;">
+    <ion-col >{{li.id}}</ion-col>
+    <ion-col >{{li.name}}</ion-col>
+    <ion-col >{{li.details}}</ion-col>
   </ion-row>
-
+  <paging></paging>
 </ion-content>

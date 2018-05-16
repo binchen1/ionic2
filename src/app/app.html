@@ -1,1 +1,71 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<!--<ion-menu [content]="content">
+    <ion-header>
+        <ion-navbar>
+            <ion-buttons start>
+                <button ion-button icon-only>
+                    <ion-icon name="contact"></ion-icon>
+                </button>
+            </ion-buttons>
+
+            <ion-buttons end>
+                <button ion-button icon-only>
+                    <ion-icon name="search"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-navbar>
+    </ion-header>
+    <ion-content>
+        <ion-list no-lines>
+            <button menuClose="left" ion-item (click)="jump()">  
+                <ion-icon name="star"  item-right ></ion-icon>
+                {{username}}
+            </button>
+        </ion-list>
+    </ion-content>
+    <ion-footer menuClose (click)="jumpHome()">
+        <button ion-button icon-left>
+            <ion-icon name="home"></ion-icon>
+            Left Icon
+        </button>
+
+        <button ion-button icon-right>
+             Right Icon
+                 <ion-icon name="home"></ion-icon>
+        </button>
+        <button ion-button icon-only>
+            <ion-icon name="ios-home"></ion-icon>
+        </button>
+    </ion-footer>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>-->
+<ion-menu [content]="content">  
+  <ion-content>  
+<!-- div menuList：是主要的菜单部分，这部分是菜单重点 -->  
+    <div class="menu-list">  
+      <!-- no-lines：取消list的默认线条 -->  
+      <ion-list no-lines>  
+        <button menuClose="left" ion-item *ngFor="let p of pages;let i=index" (click)="openPage(p)">  
+          <ion-icon name="{{p.icon}}" item-left class="iconColor"></ion-icon>  
+          {{p.title}}  
+        </button>  
+      </ion-list>  
+    </div>  
+  </ion-content>  
+    
+  <!--footer： 是这个菜单页面的底部也可以省略 -->  
+  <ion-footer>  
+      <div class="menu-footer">  
+          <ion-grid>  
+            <ion-row >  
+              <ion-col col-4 *ngFor="let f of footerBtn">  
+               <button ion-button clear >  
+                  <ion-icon name="{{f.icon}}" item-left class="iconColor" ></ion-icon>   
+                  {{f.title}}  
+               </button>  
+              </ion-col>  
+            </ion-row>  
+          </ion-grid>  
+        </div>  
+  </ion-footer>  
+</ion-menu>  
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>  

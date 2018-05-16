@@ -1,52 +1,42 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title (click)="onlogin(username)">{{username}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <!--<ion-slides class="slides_box" (ionSlideDidChange)="slideChanged(index)" [options]="mySlideOptions"  #mySlider>-->
-  <ion-slides class="slides_box" (ionSlideDidChange)="slideChanged(index)"   #mySlider
-  autoplay="2000" loop=true zoom="true" speed=300>
-    <ion-slide *ngFor=" let img of imgArray;let i=index">
-        <img src="{{img}}" alt=""/>
+  <ion-slides class="slides_box" (ionSlideDidChange)="slideChanged(index)" #mySlider loop=true speed=2000 zoom=true>
+    <ion-slide *ngFor=" let slide of imgArray;let i=index">
+       <img src="{{slide.img}}" style="height: 50vh;" />
+      <!--<ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <img src="{{slide.img}}" style="height: 50vh;" />
+         </ion-col>
+        </ion-row>
+      </ion-grid>-->
     </ion-slide>
   </ion-slides>
+  <ion-item-divider color="light"></ion-item-divider>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 *ngFor="let li of list;let i=index" (click)="jump(li.name)" text-center>
+        <img src="{{li.img}}" alt="photo" style="width: 60px">
+        <p style="margin: 0;" >{{li.name}}</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="divlist">
+      <div class="divitem">1</div>
+      <div class="divitem">2</div>
+      <div class="divitem">3</div>
+    </div> 
 
-  <h2 >{{title}}</h2>
-  <h2>My favorite hero is: {{myHero}}</h2>
-  <ion-row>
-    <ion-col style="background-color: seagreen" (click)="curriculum()">课程管理</ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col style="background-color:cornflowerblue" (click)="dataRequest()">数据请求</ion-col>
-  </ion-row>
-  <br/>
-  <ion-row>
-    <ion-col col-12 col-lg-6>
-      <ion-row>
-        <ion-col col-12 col-md-6><button (click)="goToRepirPage1()">点击进入css3</button></ion-col>
-        <ion-col col-12 col-md-6><span>hm触屏事件</span></ion-col>
-      </ion-row>
-    </ion-col>
-    <ion-col col-12 col-lg-6>
-      <ion-row>
-        <ion-col col-12 col-md-6><button (click)="goToRepirPage2()">{{names}}</button></ion-col>
-        <ion-col col-12 col-md-6><span>hl图片轮播</span></ion-col>
-      </ion-row>
-    </ion-col>
-  </ion-row>
-  <button (click)="oncanvas()">画图</button>
-  <button (click)="onhttp()">http页面</button>
-  <p>{{heroes}}</p>
-  <ul>
-    <li *ngFor="let hero of heroes">
-      {{hero}}
-    </li>
-  </ul>
   <home-child [message]="msgToChild" (outer)="receive($event)"></home-child>
   <p>来自子组件的消息 {{msgFromChild}}</p>
-  
-  <input type="datetime-local">
-  
+
+
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild,ElementRef } from '@angular/core';
 
 import { NavController,ViewController,IonicPage } from 'ionic-angular';
 import { Http, Response }          from '@angular/http';
@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
   templateUrl: 'system.html'
 })
 export class SystemPage {
+  @ViewChild('myMudata') myMudata:ElementRef;
   constructor(public navCtrl:NavController
     , public viewCtrl:ViewController, public http:Http) {
   }
@@ -46,7 +47,9 @@ export class SystemPage {
       this.ChData[i] = ({id: i, name: arr[i].name, img: arr[i].img})
     }
   }
-  onMudata(mid) {
+  onMudata(mid,event) {
+    console.dir(this.myMudata.nativeElement)
+    console.dir(event)
     if (mid!=0) {
       for (let i = 0; i < this.muData.length; i++) {
         if (this.muData[i].id == mid) {

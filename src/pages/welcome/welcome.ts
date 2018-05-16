@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, Renderer } from '@angular/core';
-import { NavController, NavParams,IonicPage } from 'ionic-angular';
+import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import { LogserviceProvider } from '../../providers/logservice/logservice';
 // import { HomePage } from '../home/home';
 
@@ -38,7 +38,7 @@ export class WelcomePage {
   private radius: number = 50;//圆形的半径
   private reverseX: number = 1;//移动方向
   private reverseY: number = 1;//移动方向
-  private timer: any=null;//移动方向
+  private timer: any = null;//移动方向
 
   constructor(private navCtrl: NavController,
     private navParams: NavParams,
@@ -53,10 +53,21 @@ export class WelcomePage {
     this.canvasImage = new Image();
     this.canvasImage.src = this.imgpath;
     this.context = this.mycanvas.nativeElement.getContext('2d');
-    this.renderer.setElementStyle(this.myimage.nativeElement, 'left', `0`);
-    this.renderer.setElementStyle(this.myimage.nativeElement, 'top', `0`);
+    // this.renderer.setElementStyle(this.myimage.nativeElement, 'left', `0`);
+    // this.renderer.setElementStyle(this.myimage.nativeElement, 'top', `0`);
 
-    this.imageWidth = this.myimage.nativeElement.naturalWidth;
+   
+    console.log(this.imageWidth,this.canvasWidth)
+    console.log(this.imageHeight,this.canvasHeight)
+    console.log(this.leftMargin)
+    this.init();
+    // console.dir(this.contentclass.nativeElement)
+    console.dir(this.myimage.nativeElement)
+    // console.dir(this.context)
+
+  }
+  config(){
+     this.imageWidth = this.myimage.nativeElement.naturalWidth;
     this.imageHeight = this.myimage.nativeElement.naturalHeight;
     this.canvasWidth = this.mycanvas.nativeElement.width = window.innerWidth;
     this.canvasHeight = this.mycanvas.nativeElement.height = window.innerHeight;
@@ -69,26 +80,22 @@ export class WelcomePage {
       y: Math.random() * (this.canvasHeight - 2 * this.radius - 2 * this.thetop) + this.radius + this.thetop,
       r: this.radius
     }
-    this.init();
-    // console.dir(this.contentclass.nativeElement)
-    // console.dir(this.myimage.nativeElement)
-    // console.dir(this.context)
-
+     this.renderer.setElementStyle(this.contentclass.nativeElement, 'width', `${this.canvasWidth}px`);
+      this.renderer.setElementStyle(this.contentclass.nativeElement, 'height', `${this.canvasHeight}px`);
+      this.renderer.setElementStyle(this.contentclass.nativeElement, 'background-position-x', `${-this.leftMargin}px`);
+      this.renderer.setElementStyle(this.contentclass.nativeElement, 'background-position-y', `${-this.topMargin}px`);
+      this.renderer.setElementStyle(this.myimage.nativeElement, 'left', `${-this.leftMargin}px`);
+      this.renderer.setElementStyle(this.myimage.nativeElement, 'top', `${-this.topMargin}px`);
   }
   init() {
     let self = this;
     this.canvasImage.onload = function (e) {
-      self.renderer.setElementStyle(self.contentclass.nativeElement, 'width', `${self.canvasWidth}px`);
-      self.renderer.setElementStyle(self.contentclass.nativeElement, 'height', `${self.canvasHeight}px`);
-      self.renderer.setElementStyle(self.contentclass.nativeElement, 'background-position-x', `${-self.leftMargin}px`);
-      self.renderer.setElementStyle(self.contentclass.nativeElement, 'background-position-y', `${-self.topMargin}px`);
-      self.renderer.setElementStyle(self.myimage.nativeElement, 'left', `${-self.leftMargin}px`);
-      self.renderer.setElementStyle(self.myimage.nativeElement, 'top', `${-self.topMargin}px`);
-    self.timer=  setInterval(function () {
-        self.initCanvas(true);
-        self.updatexy() //412573
-        console.log(self.arcclip)
-      }, 40)
+      self.config()
+      self.timer=  setInterval(function () {
+          self.initCanvas(true);
+          self.updatexy() //412573
+          console.log(self.arcclip)
+        }, 40)
     }
   }
   updatexy() {
@@ -136,7 +143,7 @@ export class WelcomePage {
   }
   onReset() {
     let self = this;
-     clearInterval(self.timer)
+    clearInterval(self.timer)
     this.arcclip = {
       x: Math.random() * (this.canvasWidth - 2 * this.radius - 2 * this.theleft) + this.radius + this.theleft,
       y: Math.random() * (this.canvasHeight - 2 * this.radius - 2 * this.thetop) + this.radius + this.thetop,

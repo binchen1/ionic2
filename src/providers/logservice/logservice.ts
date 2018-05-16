@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {  HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 
 /*
@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 export class LogserviceProvider {
    private static debug: boolean = true;
     // private static debug: boolean = false;
-  constructor(public http: Http) {
+  constructor(public http: HttpClient) {
     console.log('Hello LogserviceProvider Provider');
   }
    /**

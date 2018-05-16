@@ -1,0 +1,9 @@
+<!-- Generated template for the PagingComponent component -->
+<div>
+  <b (click)="onPrevious(isSpecialN)">上一页</b>
+  <span>...</span>
+  <span *ngFor="let spanitem of spanList;let i=index;" (click)="onSapn(spanitem)"
+  [style.background-color]="spanitem===isSpecialN?'#eee':'#fff'">{{spanitem}}</span>
+  <span>...</span>
+  <b (click)="onNext(isSpecialN)">下一页</b>
+</div>

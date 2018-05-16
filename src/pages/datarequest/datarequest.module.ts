@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { DatarequestPage } from './datarequest';
+import { PagingComponentModule } from '../../components/paging/paging.module';
+// import { ComponentsModule } from '../../components/components.module';
+
 
 @NgModule({
   declarations: [
@@ -8,6 +11,7 @@ import { DatarequestPage } from './datarequest';
   ],
   imports: [
     IonicPageModule.forChild(DatarequestPage),
+    PagingComponentModule
   ],
 })
 export class DatarequestPageModule {}

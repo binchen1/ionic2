@@ -19,6 +19,9 @@ export class CurriculumPage {
   public arr: any = [];//数据处理后的数组
   public Year: any;//年
   public Month: any;//月
+  public isSpecial: boolean=true;//月
+  public isSpecialN: any;//日
+  public redcolor: any='#fff';//月
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
@@ -28,24 +31,29 @@ export class CurriculumPage {
     var myDate = new Date();
     this.Year = myDate.getFullYear();
     this.Month = myDate.getMonth();
-    this.monthData = myDate.getFullYear() + '-' + (myDate.getMonth() + 1);
+    let month=((myDate.getMonth() + 1)+"").length===1?'0'+(myDate.getMonth() + 1):(myDate.getMonth() + 1);
+    this.monthData = myDate.getFullYear() + '-' + month;
+    let datys = (myDate.getDate() +"").length===1?'0'+myDate.getDate():myDate.getDate();
+    this.onitem(datys);
+    console.log(this.isSpecialN)//2017-11
     console.log(this.monthData)//2017-11
     console.log(this.Year)
     console.log(this.Month)
-    console.log(typeof (this.Month))
+    // console.log(typeof (this.Month))
     console.log(myDate.getDay())
     this.load(this.Year, this.Month + 1)
   }
   load(Year, Month) {
-    console.log(Year)
-    console.log(Month)
-    console.log(typeof (Month))
+    // console.log(Year)
+    // console.log(Month)
+    // console.log(typeof (Month))
     var num = this.mGetDate(Year, Month)
-    console.log('每月多少天', num)//2017,11
+    // console.log('每月多少天', num)//2017,11
     //42天
     var weekDaynum = this.getWeekDayNextMonth(Year, Month - 1);
     console.log('星期几', weekDaynum);
-    for (var i = 0; i < weekDaynum; i++) {
+      weekDaynum= weekDaynum===0?7:weekDaynum
+    for (var i = 0; i < weekDaynum-1; i++) {
       this.list.push(undefined)
     }
 
@@ -54,10 +62,7 @@ export class CurriculumPage {
     }
     for (var i = 0; i < this.list.length / 6; i++) {
       this.arr[i] = [];
-      // console.log('i',i)
       for (var j = 0; j < 7; j++) {
-         console.log('j',j)
-         console.log('j',i * 6 + j)
         this.arr[i][j] = this.list[i * 7 + j];
       }
     }
@@ -68,12 +73,12 @@ export class CurriculumPage {
     console.log(e)
   }
   blurMonth() {
-    console.log(this.monthData)
+    // console.log(this.monthData)
     let n = this.monthData.indexOf('-')
     this.Year = parseInt(this.monthData.slice(0, n));
     this.Month = parseInt(this.monthData.slice(n + 1));
-    console.log(this.Year)
-    console.log(this.Month)
+    // console.log(this.Year)
+    // console.log(this.Month)
     this.arr = [];
     this.list = [];
     this.load(this.Year, this.Month)
@@ -88,6 +93,24 @@ export class CurriculumPage {
   mGetDate(year, month) {
     var d = new Date(year, month, 0);
     return d.getDate();
+  }
+  onitem(datys){
+    console.log(datys)
+    this.isSpecialN=datys;
+    this.redcolor=this.randomColor();
+    console.log(this.redcolor)
+  }
+  randomNumber(min,max){
+    return Math.floor(Math.random()*(max-min)+min)
+  }
+  randomColor(){
+    let r=this.randomNumber(0,255);
+    let g=this.randomNumber(0,255);
+    let b=this.randomNumber(0,255);
+    return `rgb(${r},${g},${b})`
+  }
+  onsubmit(){
+    this.navCtrl.pop();
   }
 
 
