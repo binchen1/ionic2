@@ -1,11 +1,16 @@
 paging {
     span{
-        background-color: #ccc;
+        background-color: #EEEEED;
         display: inline-block;
         width: 30px;
         height: 40px;
         text-align: center;
         line-height: 40px;
         margin-right: 10px;
+        border-radius: 5px;
+    }
+    .active{
+        background-color: #292929;
+        color: #fff;
     }
 }

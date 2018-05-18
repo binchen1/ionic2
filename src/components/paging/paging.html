@@ -1,9 +1,16 @@
 <!-- Generated template for the PagingComponent component -->
 <div>
-  <b (click)="onPrevious(isSpecialN)">上一页</b>
+  <span (click)="onPrevious(isSpecialN)">&lt;</span>
   <span>...</span>
-  <span *ngFor="let spanitem of spanList;let i=index;" (click)="onSapn(spanitem)"
-  [style.background-color]="spanitem===isSpecialN?'#eee':'#fff'">{{spanitem}}</span>
+  <span *ngFor="let spanitem of spanList;let i=index;" (click)="onSapn(spanitem)" #mySpan
+  [ngClass]="spanitem===isSpecialN?'active':''">{{spanitem}}</span>
   <span>...</span>
-  <b (click)="onNext(isSpecialN)">下一页</b>
+  <span (click)="onSapn(vcount.totalPage)">{{vcount.totalPage}}</span>
+  <span (click)="onNext(isSpecialN)">&gt;</span>
+  前往 
+  <input type="text" [value]="isSpecialN" (input)="isSpecialN=$event.target.value" (blur)="inputblur()">
+  <!--<input type="text" [(ngModel)]="isSpecialN">-->
+  <h3>{{isSpecialN}}</h3>
+  页
+  
 </div>
