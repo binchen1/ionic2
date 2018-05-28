@@ -1,7 +1,7 @@
 import { Component,ViewChild,ElementRef } from '@angular/core';
 
 import { NavController,ViewController,IonicPage } from 'ionic-angular';
-import { Http, Response }          from '@angular/http';
+import { HttpClient ,HttpHeaders}          from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
 
@@ -13,7 +13,7 @@ import 'rxjs/add/operator/map';
 export class SystemPage {
   @ViewChild('myMudata') myMudata:ElementRef;
   constructor(public navCtrl:NavController
-    , public viewCtrl:ViewController, public http:Http) {
+    , public viewCtrl:ViewController, public http:HttpClient) {
   }
   ChData = [];//子目录数组
   muData = [];//目录数组
@@ -28,11 +28,11 @@ export class SystemPage {
   ngOnInit() {
     console.log(" AppComponent ngOnInit :", "run step ngOnInit ");
     //备注：页面跳转过来获取初次数据this.muData，this.XtList（调this.bianli（）函数：this.bianli(this.XtList)）
-    this.http.get('assets/json/system.json', 3).subscribe(res=> {
-      this.XtList = res.json().data
-      this.XtListChilder = this.XtList[0].children;
-      this.bianli(this.XtList)
-    });
+    // this.http.get('assets/json/system.json', 3).subscribe(res=> {
+    //   this.XtList = res.json().data
+    //   this.XtListChilder = this.XtList[0].children;
+    //   this.bianli(this.XtList)
+    // });
     this.muData = [{"id": 11, "name": "物业"},
       {"id": 22, "name": "国贸集团"},
       {"id": 33, "name": "大西"}

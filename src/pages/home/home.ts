@@ -19,17 +19,11 @@ export class HomePage {
               private platform: Platform,
                private menuCtrl: MenuController
   ) {
-    this.msgToChild = 'message from parent'
+    this.msgToChild = 'message from parent';
     this.platform.ready().then((readySource) => {
       var currentPlatformVersion = this.platform.versions()
       console.log(currentPlatformVersion)
     });
-    // var name=this.navParams.get('name');
-    // if(name===undefined){
-    //   this.names='请登录';
-    // }else{
-    //  this.names= this.navParams.get('name')+',你好';
-    // }
   }
 
   ionViewDidLoad(){

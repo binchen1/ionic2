@@ -1,16 +1,20 @@
 <!-- Generated template for the PagingComponent component -->
 <div>
   <span (click)="onPrevious(isSpecialN)">&lt;</span>
-  <span>...</span>
+  <span *ngIf="isSpecialN>=5" (click)="onSapn(1)">1</span>
+  <span *ngIf="isSpecialN>=5">...</span>
+
   <span *ngFor="let spanitem of spanList;let i=index;" (click)="onSapn(spanitem)" #mySpan
   [ngClass]="spanitem===isSpecialN?'active':''">{{spanitem}}</span>
-  <span>...</span>
-  <span (click)="onSapn(vcount.totalPage)">{{vcount.totalPage}}</span>
+
+  <span *ngIf="isRight">...</span>
+  <span *ngIf="isRight" (click)="onSapn(vcount.totalPage)">{{vcount.totalPage}}</span>
   <span (click)="onNext(isSpecialN)">&gt;</span>
   前往 
-  <input type="text" [value]="isSpecialN" (input)="isSpecialN=$event.target.value" (blur)="inputblur()">
+  <!--<input type="text" [value]="isSpecialN" (input)="isSpecialN=$event.target.value" (blur)="inputblur(isSpecialN=$event.target.value)">-->
+  <input type="text" [value]="isSpecialN" (input)="$event.target.value" (blur)="inputblur(isSpecialN=$event.target.value)">
   <!--<input type="text" [(ngModel)]="isSpecialN">-->
-  <h3>{{isSpecialN}}</h3>
+  <!--<h3>{{totalCount}}</h3>-->
   页
   
 </div>

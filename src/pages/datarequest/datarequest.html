@@ -19,5 +19,6 @@
     <ion-col >{{li.name}}</ion-col>
     <ion-col >{{li.details}}</ion-col>
   </ion-row>
-  <paging></paging>
+  <!--<paging *ngIf="isPaging"  [totalCounts]="vcount"></paging>-->
+  <paging *ngIf="vcount>0" [totalCounts]="vcount" (outerIndex)="getList($event)"></paging>
 </ion-content>

@@ -17,6 +17,7 @@ export class HomeChildComponent {
 
   constructor() {
     console.log('Hello HomeChildComponent Component');
+    console.log(this.message)
   }
    sendToParent(){
     this.outer.emit('message from child')
