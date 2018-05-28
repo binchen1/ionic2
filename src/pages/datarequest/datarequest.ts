@@ -34,6 +34,7 @@ export class DatarequestPage {
        this.vcount=this.json.list.length;
        console.log('constructor get',this.json.get(1,2))
        console.log('constructor list',this.json.list)
+       console.log('constructor',this.json)
        console.log('id',this.id)
        console.log('get',this.XtList)
   }
