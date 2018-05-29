@@ -6,6 +6,7 @@ import { UpdateImageComponent } from './update-image/update-image';
 import { MycomponetComponent } from './mycomponet/mycomponet';
 import { HomeChildComponent } from './home-child/home-child';
 
+
 @NgModule({
 	declarations: [
 		UpdateImageComponent,

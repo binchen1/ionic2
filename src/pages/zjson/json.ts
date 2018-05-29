@@ -17,7 +17,7 @@ export class Json implements ListInterface{
     "details": string;
     "mobile": string;
     "img": string;
-     list:ListInterface[];
+    public list:ListInterface[];
      listget:ListInterface[];
     constructor(data?: ListInterface){
         // 
@@ -42,7 +42,7 @@ export class Json implements ListInterface{
              {"id":16,"name":"核心研发部","details":"投资项目的具体实施运作及其经营管理","img":"assets/index/xietong04.png"}
         ]
         // return this.list;
-        return this;
+        // return this;
     }
     get(pages,num){
 

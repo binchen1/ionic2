@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { SystemPage } from './system';
+import { CrumbsComponentModule } from '../../components/crumbs/crumbs.module';
 
 @NgModule({
   declarations: [
@@ -8,7 +9,7 @@ import { SystemPage } from './system';
   ],
   imports: [
     IonicPageModule.forChild(SystemPage),
-
+    CrumbsComponentModule,
   ],
 })
 export class SystemPageModule {}

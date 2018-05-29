@@ -1,0 +1,9 @@
+<!-- Generated template for the CrumbsComponent component -->
+<!--<ion-list>
+ <ion-item-divider color="light" style="display: inline-block">-->
+<p *ngIf="muData.length>0" #myMudata style="display: inline-block">
+
+  <span *ngFor="let Xd of muData;let i=index" (tap)="onMudata(Xd.id)"> <i *ngIf="i!==0">&gt;</i> {{Xd.name}}{{Xd.id}}</span>
+</p>
+<!--</ion-item-divider>
+ </ion-list>-->
