@@ -7,18 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-  <p (click)="nextProduct()"> {{productName}}</p>
-  <p (click)="nextNumber()"> {{productNumber}}</p>
+  <myradio [list]="lists" (item)="listItem($event)" ></myradio>
+
+
+
   <button ion-button [navPush]="nxPage" [navParams]="param">
     点击直接带参数调转contact
   </button>
+  <p (click)="nextProduct()"> {{productName}}</p>
+  <p (click)="nextNumber()"> {{productNumber}}</p>
 
-  <ion-row>
+  <!--<ion-row>
     <ion-col>
       <mycomponet data="AboutPage" (parentClick)="onClick($event)"></mycomponet>
-
     </ion-col>
-  </ion-row>
+  </ion-row>-->
   <br><br>
   <ion-item>
     <ion-row>
@@ -55,12 +58,12 @@
           </ion-col>
         </ion-row>
       </ion-col>
-
     </ion-row>
   </ion-item>
   <ion-row>
     {{nature}}
   </ion-row>
+
   <ion-row (click)="qitaFwq()">
     点击获取数据
   </ion-row>
@@ -93,4 +96,5 @@
   <br>
   <br>
   <br>
+
 </ion-content>

@@ -1,0 +1,17 @@
+advertisement {
+@media screen and (max-width:480px){
+    .slides_box{
+      height:136px;
+    }
+  }
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    .slides_box {
+      height: 280px;
+    }
+  }
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .slides_box {
+      height: 340px;
+    }
+  }
+}

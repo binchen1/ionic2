@@ -1,0 +1,21 @@
+<!-- Generated template for the AdvertisementComponent component -->
+<ion-slides class="slides_box" (ionSlideDidChange)="slideChanged(index)" #mySlider loop=true speed=2000 zoom=true>
+  <ion-slide *ngFor=" let slide of imgArray;let i=index">
+    <img src="{{slide.img}}" style="height: 100%;" />
+  </ion-slide>
+</ion-slides>
+<!--<ion-slides pager class="slides_box" loop=true speed=2000 zoom=true>
+
+  <ion-slide style="background-color: green">
+    <img src="assets/images/z06.jpg" style="height: 100%;">
+  </ion-slide>
+
+  <ion-slide style="background-color: blue">
+   <img src="assets/images/z05.jpg" style="height: 100%;">
+  </ion-slide>
+
+  <ion-slide style="background-color: red">
+    <img src="assets/images/z07.jpg" style="height: 100%;">
+  </ion-slide>
+
+</ion-slides>-->

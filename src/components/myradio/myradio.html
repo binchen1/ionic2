@@ -1,0 +1,15 @@
+<!-- Generated template for the MyradioComponent component -->
+<div>
+  {{text}}
+</div>
+<div class="radioModule" >
+
+  <div class="radioClass" *ngFor="let li of list ;let i=index;">
+     <span [style.color]="currentHero===li ? '#108EE9':'#a6a6a6'">  
+            <b [style.background-image]="currentHero===li ? 'url(assets/images/on.png)':'url(assets/images/off.png)'"></b
+            >{{li}} </span>
+    <label>
+          <input type="radio" name="sex" value={{li}}  (change)="changeNature($event)" (input)="currentHero=$event.target.value">
+          </label>
+  </div>
+</div>

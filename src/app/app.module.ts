@@ -3,7 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { MyApp } from './app.component';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 // import { HomePage } from '../pages/home/home';
 // import { WelcomePage } from '../pages/welcome/welcome';
 
@@ -34,7 +34,7 @@ import { DatetimeformatProvider } from '../providers/datetimeformat/datetimeform
     }),
     BrowserModule,
     ComponentsModule,
-    FormsModule,
+    // FormsModule,
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],

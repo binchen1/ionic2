@@ -14,6 +14,7 @@ export class AboutPage {
   nxPage: any = 'ContactPage';
 
   param: any = { dd: 42 };
+  lists:any[]=[]
   // detailMsg: string = "";
   //单双选
   nature: any;
@@ -25,6 +26,8 @@ export class AboutPage {
     public params: NavParams
   ) {
     console.log(this.params.get('id'));
+    this.lists=['普通','公益','其他'];
+    console.log(this.lists)
   }
 
   productName: string = "Frist Product";
@@ -54,6 +57,9 @@ export class AboutPage {
   //获取其他服务器数据
   qitaFwq() {
     console.log('点击获取数据')
+  }
+  listItem(e){
+    console.log(e)
   }
 
 }

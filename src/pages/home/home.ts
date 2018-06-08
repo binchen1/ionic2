@@ -48,11 +48,12 @@ export class HomePage {
                {"name":"进入css3","img":"assets/images/xietong03.png"},
                {"name":"画图","img":"assets/images/xietong05.png"},
                {"name":"http页面","img":"assets/images/xietong06.png"},
+               {"name":"Radio","img":"assets/images/xietong07.png"},
     ]
   }
   onlogin(uname){
     console.log(uname)
-     this.navCtrl.push('LoginPage', { id: "2" });
+     this.navCtrl.push('LoginPage');
   }
   jump(liname){
     if('日期选择'===liname){
@@ -62,9 +63,11 @@ export class HomePage {
     }else if('进入css3'===liname){
       this.navCtrl.push('HomeHmPage', { id: "sam" });
     }else if('画图'===liname){
-       this.navCtrl.push('HomeCanvasPage', { id: "2" });
+       this.navCtrl.push('HomeCanvasPage');
     }else if('http页面'===liname){
-      this.navCtrl.push('SystemPage', { id: "2" });
+      this.navCtrl.push('SystemPage');
+    }else if('Radio'===liname){
+      this.navCtrl.push('AboutPage');
     }
   }
 
